@@ -31,12 +31,14 @@ const timer = {
             let indexOfColor = randomIntegerFromInterval(0, colors.length - 1);
             let randomColor = colors[indexOfColor];
             refs.body.style.backgroundColor = randomColor;
+            refs.btnStart.setAttribute('disabled', 'true');
         }, 1000);
         
     },
     stopChangeColor() {
         clearInterval(this.changeColors);
         this.isActive = false;
+        refs.btnStart.removeAttribute('disabled');
     },
 };
 
